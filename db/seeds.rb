@@ -9,18 +9,16 @@
 Drink.destroy_all
 User.destroy_all
 
-user = []
-
+@user = []
 5.times do 
-    user << User.create(name: Faker::Beer.brand, email: "jpbond58@gmail.com")
+    @user << User.create(name: Faker::Beer.brand, email: "jpbond58@gmail.com")
 end
 
 10.times do 
     Drink.create(name: Faker::Beer.name, 
                 price: rand(1...20), 
-                alcohol: rand(1.0...50.0),
-                user_id: user.sample.id
-                )
+                alcohol: rand(1...50),
+                user_id: @user.sample.id)
 end
 
 
