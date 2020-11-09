@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_193255) do
     t.string "name"
     t.integer "price"
     t.float "alcohol"
+    t.string "classification"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

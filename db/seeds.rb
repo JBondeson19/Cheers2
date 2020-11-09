@@ -9,19 +9,44 @@
 Drink.destroy_all
 User.destroy_all
 
-user = []
 
-5.times do 
-    user << User.create(name: Faker::Beer.brand, email: "jpbond58@gmail.com")
+user = []
+names = ["James", "Erick", "Vita", "Rico", "Aaron"]
+emails = ["jpbond58@gmail.com", "eeverick@gmail.com", "lavitaloca@gmail.com", "ricoswuave@gmail.com", "a-a-ron@gmail.com"]
+names.each do |name|
+    user << User.create(name: name, email: emails.sample)
 end
 
 10.times do 
     Drink.create(name: Faker::Beer.name, 
                 price: rand(1...20), 
-                alcohol: rand(1.0...50.0),
+                alcohol: rand(1.0...50.0).round(2),
+                classification: "Beer",
                 user_id: user.sample.id
                 )
 end
+
+wines = ["Promontory", "Chardonnay", "Sauvignon Blanc", "Pinot Noir", "Cabernet Franc/Merlot Blend"]
+
+wines.each do |w|
+    Drink.create(name: w,
+        price: rand(1...20), 
+        alcohol: rand(1.0...50.0).round(2),
+        classification: "Wine",
+        user_id: user.sample.id
+        )
+end
+
+cocktails = ["Mojito", "Margarita", "Manhattan", "Cosmo", "Old Fashion", "Martini", "Long Island Iced Tea", "Moscow Mule"]
+cocktails.each do |cocktail|
+    Drink.create(name: cocktail,
+        price: rand(1...20), 
+        alcohol: rand(1.0...50.0).round(2),
+        classification: "Cocktail",
+        user_id: user.sample.id
+        )
+end
+
 
 
 
