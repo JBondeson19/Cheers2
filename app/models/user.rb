@@ -1,5 +1,11 @@
 class User < ApplicationRecord
 
+    has_secure_password #needed for bcrypt gem to hide/encrypt passwords
+
+    validates :name, presence: true 
+    
+   
+    
     has_many :fave_drinks
     has_many :drinks, through: :fave_drinks
 
