@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   get '/', to: 'static#home'
 
-  get '/login_page', to: 'sessions#login_page'
-  post "/login", to: 'sessions#login'
+  get '/login', to: 'login#new'
+  post "/login", to: 'login#create'
 
-  get "/logout", to: "sessions#logout", as: "logout"
+  delete "/logout", to: "login#destroy", as: "logout"
   
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
+
+  delete "/users/:id", to: "users#destroy", as: "destroy"
 
   resources :drinks
 

@@ -7,16 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Drink.destroy_all
-User.destroy_all
-
-
-user = []
-names = ["James", "Erick", "Vita", "Rico", "Aaron"]
-emails = ["jpbond58@gmail.com", "eeverick@gmail.com", "lavitaloca@gmail.com", "ricoswuave@gmail.com", "a-a-ron@gmail.com"]
-password = ["ILoveDogs", "ILovePizza", "ILoveLamp", "ILovePho", "ILoveNewYork"]
-names.each do |name|
-    user << User.create(name: name, email: emails.sample, password_digest: password.sample)
-end
 
 10.times do 
     Drink.create(name: Faker::Beer.name, 

@@ -1,1 +1,8 @@
 <h1>Welcome <%= @user.name %>!</h1>
+
+<%= form_with url: '/logout', method: 'delete' do |f|%>
+    <%= f.submit 'Logout'%>
+<% end %>
+
+<%= button_to 'Delete Account', @user, method: 'delete' %>
+
