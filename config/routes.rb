@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   delete "/users/:id", to: "users#destroy", as: "destroy"
 
-  resources :drinks
+  post '/drinks', to: 'drinks#create', as: 'new_drink'
+
+  resources :drinks, only: [:index, :show, :new, :edit, :update]
 
   resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
