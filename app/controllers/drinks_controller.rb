@@ -17,8 +17,6 @@ class DrinksController < ApplicationController
 
     def create
         @new_drink = Drink.new(drink_params)
-        # @new_drink.save
-        # redirect_to drinks_path
         if @new_drink.valid?
             @new_drink.save
             redirect_to drink_path(@new_drink)

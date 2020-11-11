@@ -9,16 +9,18 @@ Rails.application.routes.draw do
 
   delete "/logout", to: "login#destroy", as: "logout"
 
+  get '/drinks/new', to: 'drinks#new', as: 'new_drink_form'
   post '/drinks', to: 'drinks#create', as: 'new_drink'
 
   get 'relationship/new', to: 'relationships#new'
   post 'relationships', to: 'relationships#create'
 
-  put '/users//:id', to: "users#update", as: "update"
+  get '/users/:id/edit', to: 'users#edit', as: 'edit'
+  patch '/users/:id/edit', to: "users#update", as: "update"
   delete "/users/:id", to: "users#destroy", as: "destroy"
   
-  resources :drinks, only: [:index, :show, :new, :edit, :update]
+  resources :drinks, only: [:index, :show, :edit, :update]
 
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

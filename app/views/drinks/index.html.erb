@@ -5,3 +5,5 @@
     <li><%= link_to drink.name, drink_path(drink.id)%> -- <%= drink.classification %></li>
 </ul>
 <% end %>
+
+<%= link_to 'Logout', logout_path, method: 'delete'%>

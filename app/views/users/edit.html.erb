@@ -1,6 +1,6 @@
 <h1> Edit Your Profile </h1>
 
-<%= form_with url: update_user_path, method: "put" do |f| %>
+<%= form_with url: edit_path, method: "patch" do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
