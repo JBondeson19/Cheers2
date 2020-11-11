@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   delete "/users/:id", to: "users#destroy", as: "destroy"
 
+  get 'relationship/new', to: 'relationships#new'
+  post '/relationship', to: 'relationships#create'
+
   resources :drinks
 
   resources :users, only: [:show]
