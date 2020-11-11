@@ -19,8 +19,6 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        if @user(session[:id]) == @user(params[:id])
-
     end
 
     def destroy

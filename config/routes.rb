@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
   get 'relationship/new', to: 'relationships#new'
   post 'relationships', to: 'relationships#create'
+  
   resources :drinks, only: [:index, :show, :new, :edit, :update]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
