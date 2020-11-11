@@ -1,8 +1,19 @@
 <h1>Welcome <%= @user.name %>!</h1>
 
+<h3>Friends List!</h3>
+<% @user.friends.each do |friend| %>
+    <%= link_to friend.name, user_path(friend.id) %>
+<%end %>
+
+
+<br>
+<br>
+
 <%= form_with url: '/logout', method: 'delete' do |f|%>
     <%= f.submit 'Logout'%>
 <% end %>
+
+<br>
 
 <%= button_to 'Delete Account', @user, method: 'delete' %>
 
@@ -11,5 +22,6 @@
 
 <%= link_to 'Checkout our Drinks!', drinks_path%>
 
+<br>
 
 <%= link_to 'Add A Friend', relationship_new_path %>

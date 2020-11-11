@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post '/drinks', to: 'drinks#create', as: 'new_drink'
 
+  get 'relationship/new', to: 'relationships#new'
+  post 'relationships', to: 'relationships#create'
   resources :drinks, only: [:index, :show, :new, :edit, :update]
 
   resources :users, only: [:show]

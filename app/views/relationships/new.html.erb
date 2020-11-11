@@ -1,7 +1,7 @@
 <h1>Add A Friend</h1>
 
 
-<%= form_with url: relationship_path, method: 'post' do |f| %>
+<%= form_with url: relationships_path, method: 'post' do |f| %>
 
 <% f.label :bartender %>
 <% f.collection_select :bartender_id, User.all, :id, :name %>
