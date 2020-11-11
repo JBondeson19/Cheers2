@@ -16,7 +16,15 @@ class DrinksController < ApplicationController
     end
 
     def create
-        @new_drink = Drink.new()
+        @new_drink = Drink.new(drink_params)
+        # @new_drink.save
+        # redirect_to drinks_path
+        if @new_drink.valid?
+            @new_drink.save
+            redirect_to drink_path(@new_drink)
+        else
+            render :new
+        end
     end
 
     def edit
@@ -26,7 +34,7 @@ class DrinksController < ApplicationController
     end
 
     def drink_params
-        params.permit
+        params.permit(:name, :price, :alcohol, :classification, :user_id)
     end
     
 end
