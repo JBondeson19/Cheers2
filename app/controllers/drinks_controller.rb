@@ -45,6 +45,12 @@ class DrinksController < ApplicationController
         redirect_to user_path(session[:user_id])
     end
 
+    def user
+        @user = session[:user_id]
+    end
+
+    private 
+
     def drink_params
         params.permit(:name, :price, :alcohol, :classification, :user_id)
     end
