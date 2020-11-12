@@ -1,0 +1,19 @@
+<h1> Edit Drink!</h1>
+
+<%= form_with url: @drink, method: 'patch' do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :price %>
+    $<%= f.number_field :price %>
+
+    <%= f.label :alcohol %>
+    %<%= f.number_field :alcohol, step: :any %>
+
+    <%= f.label :classification %>
+    <%= f.select :classification, ["Beer", "Wine", "Cocktail"] %>
+
+    <%= f.label :user_id%>
+    <%= f.collection_select :user_id, User.all, :id, :name%>
+    <%= f.submit 'Update Drink'%>
+<% end %>

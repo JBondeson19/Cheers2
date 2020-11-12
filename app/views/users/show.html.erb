@@ -4,31 +4,24 @@
 
 <h3>Friends List!</h3>
 <% @user.friends.each do |friend| %>
-    <%= link_to friend.name, user_path(friend.id) %>
+    <div><%= link_to friend.name, user_path(friend.id) %></div>
 <%end %>
-
+<h3>Your Drinks List!</h3>
 <% @user.drinks.each do |drink| %>
-    <%= link_to drink.name, drink_path(drink.id) %>
+    <div><%= link_to drink.name, drink_path(drink.id) %></div>
 <% end %>
-
-
-
-
 <br>
 <br>
+
+
+
 <% if @user.id == session[:user_id] %>
-<%= form_with url: '/logout', method: 'delete' do |f|%>
-    <%= f.submit 'Logout'%>
+<%= link_to "Edit Profile", edit_path %>
 <% end %>
-<% end %>
+
+<br>
 
 <%= link_to 'Create Drink', new_drink_form_path%>
-
-<br>
-<% if @user.id == session[:user_id] %>
-<%= button_to 'Delete Account', @user, method: 'delete' %>
-<% end %>
-
 
 <br>
 
@@ -39,6 +32,16 @@
 <%= link_to 'Add A Friend', relationship_new_path %>
 <% end %>
 
+<br>
 <% if @user.id == session[:user_id] %>
-<%= link_to "Edit Profile", edit_path %>
+<%= form_with url: '/logout', method: 'delete' do |f|%>
+    <%= f.submit 'Logout'%>
 <% end %>
+<% end %>
+
+
+<br>
+<% if @user.id == session[:user_id] %>
+<%= button_to 'Delete Account', @user, method: 'delete' %>
+<% end %>
+<br>

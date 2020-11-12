@@ -3,3 +3,14 @@
    <li>Price: $<%= @drink.price%></li>
     <li>Alcohol Percentage: %<%= @drink.alcohol%></li>
     <%= link_to 'Back', drinks_path%>
+    <%= link_to 'Back To User Page', user_path(session[:user_id])%>
+
+    
+    <% if @drink.user_id == session[:user_id] %>
+    <%= link_to 'Edit Drink', edit_drink_path%>
+    <% end %>
+<br>
+<br>
+   <% if @drink.user_id == session[:user_id] %>
+    <%= link_to 'Delete Drink', destroy_drink_path, method: 'delete'%>
+    <% end %>

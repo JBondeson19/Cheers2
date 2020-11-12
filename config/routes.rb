@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/drinks/new', to: 'drinks#new', as: 'new_drink_form'
   post '/drinks', to: 'drinks#create', as: 'new_drink'
+  delete '/drinks/:id', to: 'drinks#destroy', as: 'destroy_drink' 
 
   get 'relationship/new', to: 'relationships#new'
   post 'relationships', to: 'relationships#create'
