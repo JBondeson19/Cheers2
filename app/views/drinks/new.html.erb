@@ -1,6 +1,12 @@
 <h1>Create Your Drink!</h1>
 
-<%= form_with url: @new_drink, method: 'post' do |f|%>
+<% if @new_drink.errors.any? %>
+    <% @new_drink.errors.full_messages.each do |error| %>
+    <div><%= error %></div>
+    <% end %>
+<% end %>
+
+<%= form_with url: @new_drink, method: 'post', local: true do |f|%>
     <%= f.label :name %>
     <%= f.text_field :name %>
 
