@@ -1,5 +1,13 @@
 <h1>Welcome to Cheers! Sign Up Here</h1>
 
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |error| %>
+    <%= error %>
+    <% end %>
+<% end %>
+
+
+
 <%= form_with url: "/signup", method: "post" do |f| %>
 
 <%= f.label :name %>
@@ -15,3 +23,6 @@
 <%= f.password_field :password_confirmation %>
 <%= f.submit "Create Your Account" %>
 <% end %>
+
+
+<br>
