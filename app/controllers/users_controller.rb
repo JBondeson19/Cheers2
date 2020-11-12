@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             @user.save
             redirect_to @user
         else
-            redirect_to "/signup"
+            render :new
         end
     end
 
