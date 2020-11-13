@@ -9,17 +9,22 @@
 <%= form_with url: @new_drink, method: 'post', local: true do |f|%>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+<br>
+<br>
     <%= f.label :price %>
     $<%= f.number_field :price %>
-
+<br>
+<br>
     <%= f.label :alcohol %>
-    %<%= f.number_field :alcohol, step: :any %>
-
+    <%= f.number_field :alcohol, step: :any %>%
+<br>
+<br>
     <%= f.label :classification %>
     <%= f.select :classification, ["Beer", "Wine", "Cocktail"] %>
-
+<br>
+<br>
     <%= f.label :user_id%>
     <%= f.collection_select :user_id, User.all, :id, :name%>
+<br>
     <%= f.submit 'Create Drink'%>
 <% end %>

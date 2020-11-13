@@ -1,16 +1,49 @@
 
 @import "bootstrap";
 
+h1, .h1 {
+    margin-top: 25px;
+    font-size: calc(1.375rem + 1.5vw);
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+body {
+
+    background-color: rgb(36, 38, 59);
+    color: rgb(255, 255, 255);
+
+    
+}
+
+img {
+    float: inherit;;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: rgb(250, 200, 64);
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: rgba(35, 37, 58, 0.911);
+    border: 1px solid rgba(192, 192, 192, 0.125);
+}
 .bg-dark {
     background-color: #780040;
-
     background-image: url("https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045380_960_720.jpg");
-    opacity: 0.75;
+    opacity: 1;
 }
 
 .navbar-dark .navbar-nav .nav-link {
+    border: 50px;
     color: rgb(255, 255, 255);
-}
-body {
-    background-color: rgb(44, 44, 44);
 }
